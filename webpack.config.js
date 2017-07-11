@@ -2,7 +2,6 @@ const webpack = require('webpack');
 const path = require('path');
 
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-
 /*
  * We've enabled UglifyJSPlugin for you! This minifies your app
  * in order to load faster and run less javascript.
@@ -57,7 +56,14 @@ module.exports = {
 					],
 					fallback: 'style-loader'
 				})
-			}
+			},
+			{
+        test: /\.(png|jpg|svg)$/,
+        loader: 'file-loader',
+				options: {
+					name: './images/[name].[hash].[ext]'
+				}
+      }
 		]
 	},
 
@@ -67,5 +73,9 @@ module.exports = {
 							title: 'Darkcaster',
 							filename: 'index.html',
 							template: './src/index.html'
-						})]
+						})
+						// new CopyWebpackPlugin([
+						// 	{from: './src/images', to: './images'}
+						// ])
+					]
 };
