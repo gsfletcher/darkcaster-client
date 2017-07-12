@@ -63,7 +63,14 @@ module.exports = {
 				options: {
 					name: './images/[name].[hash].[ext]'
 				}
-      }
+      },
+			{
+				test: /\.html$/,
+				loader: 'html-loader',
+				options: {
+					minimize: true
+				}
+			}
 		]
 	},
 
