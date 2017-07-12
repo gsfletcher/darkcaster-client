@@ -11,5 +11,5 @@ const CurrentWeatherComponent = require('./components/current-weather/index.js')
 angular.module('darkcaster-client', []); //setter syntax
 
 angular.module('darkcaster-client') //getter syntax-angular's version of 'require'
-       .factory('WeatherService', WeatherService)
+       .factory('WeatherService', WeatherService) //creates service
        .component('currentWeather', CurrentWeatherComponent);
