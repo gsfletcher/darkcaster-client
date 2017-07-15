@@ -5,9 +5,10 @@ WeatherService.$inject = ['$http'];
 function WeatherService($http){
   const baseUrl = 'https://dry-eyrie-43885.herokuapp.com/weather/';
   return {
-  // label              function name
+    // label            function name
     getCurrentWeather: getCurrently,
-    getHourlyWeather: getHourly
+    getHourlyWeather: getHourly,
+    getDailyWeather: getDaily
   };
   function getCurrently(lat, lon){
     const url = `${baseUrl}${lat},${lon}`;
@@ -21,6 +22,13 @@ function WeatherService($http){
     return $http.get(url)
                 .then(response => {
                   return response.data.hourly;
+                });
+  }
+  function getDaily(lat, lon){
+    const url = `${baseUrl}${lat},${lon}`;
+    return $http.get(url)
+                .then(response => {
+                  return response.data.daily;
                 });
   }
 }
