@@ -17,7 +17,7 @@
   <li ng-repeat='hour in $ctrl.hourlyWeather.data |limitTo:1'>
   <header>
     <h1>Precipitation Probability: {{ hour.precipProbability * 100 | number:2 }}%</h1>
-    <!-- <img ng-src="{{ $ctrl.imageLookup[ctrl.weatherData.icon] }}" /> -->
+    <img ng-src="{{ $ctrl.imageLookup[hour.icon] || $ctrl.missingImage }}" />
     <h1>{{ hour.time * 1000 | date:"short" }}</h1>
   </header>
 

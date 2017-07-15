@@ -1,13 +1,12 @@
 /*jshint esversion:6*/
 // const clearDay = require('../../images/clear-day.png');
-CurrentWeatherController.$inject = ['WeatherService']; //magic for us
+CurrentWeatherController.$inject = ['WeatherService', 'ImageService']; //magic for us
 
-function CurrentWeatherController(weather){
+function CurrentWeatherController(weather, images){
   this.lat = 0;
   this.lon = 0;
-  // this.imageLookup = {
-  //   'clear-day': clearDay
-  // };
+  this.imageLookup = images.lookup;
+  this.missingImage = images.missing;
 
   //functions
   this.search = function search(){
