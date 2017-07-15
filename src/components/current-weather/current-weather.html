@@ -10,9 +10,9 @@
         <div>
           <button type="button" ng-click='$ctrl.search()'>Search</button>
         </div>
-
     </section>
-    <section ng-if='$ctrl.weatherData'> 
+    
+    <section ng-if='$ctrl.weatherData'>
       <header>
         <h1>Precipitation Probability: {{ $ctrl.weatherData.precipProbability * 100 | number:2 }}%</h1>
         <img ng-src="{{ $ctrl.imageLookup[ctrl.weatherData.icon] }}" />
