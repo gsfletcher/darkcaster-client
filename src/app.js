@@ -1,5 +1,6 @@
 /*jshint esversion:6*/
 const angular = require('angular');
+const bootstrap = require('bootstrap/dist/css/bootstrap.css');
 
 // services
 const WeatherService = require ('./services/weather.service');
