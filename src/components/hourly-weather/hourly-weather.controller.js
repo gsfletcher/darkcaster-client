@@ -9,8 +9,7 @@ function HourlyWeatherController(weather, images) {
 
   this.search = function search() {
     weather.getHourlyWeather(this.lat, this.lon)
-           .then(hourlyWeather => this.hourlyWeather = hourlyWeather)
-           .then(_ => console.log(this.hourlyWeather));
+           .then(hourlyWeather => this.hourlyWeather = hourlyWeather);
   };
 
 }
