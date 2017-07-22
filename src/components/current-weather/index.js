@@ -6,7 +6,10 @@ const currentController = require('./current-weather.controller');
 const CurrentWeatherComponent = {
   template: htmlTemplate,
   styles: cssTemplate,
-  controller: currentController
+  controller: currentController,
+  bindings: {
+    weather: '<'
+  }
 };
 
 module.exports = CurrentWeatherComponent;

@@ -1,36 +1,19 @@
 /*jshint esversion:6*/
-const weatherData = require('../../mocks/weather.json');
 WeatherService.$inject = ['$http'];
 
 function WeatherService($http){
   const baseUrl = 'https://dry-eyrie-43885.herokuapp.com/weather/';
   return {
     // label            function name
-    getCurrentWeather: getCurrently,
-    getHourlyWeather: getHourly,
-    getDailyWeather: getDaily
+    get: getAllWeather
   };
-  function getCurrently(lat, lon){
+  function getAllWeather(lat, lon){
     const url = `${baseUrl}${lat},${lon}`;
     return $http.get(url)
                 .then(response => {
-                  return response.data.currently;
+                  return response.data;
                 });
-  }
-  function getHourly(lat, lon){
-    const url = `${baseUrl}${lat},${lon}`;
-    return $http.get(url)
-                .then(response => {
-                  return response.data.hourly;
-                });
-  }
-  function getDaily(lat, lon){
-    const url = `${baseUrl}${lat},${lon}`;
-    return $http.get(url)
-                .then(response => {
-                  return response.data.daily;
-                });
-  }
+              }
 }
 
 module.exports = WeatherService;
