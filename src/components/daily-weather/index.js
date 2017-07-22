@@ -1,10 +1,13 @@
 /*jshint esversion:6*/
-const dailyHtmlTemplate = require('./daily-weather.html');
-const dailyController = require('./daily-weather.controller.js');
+const template = require('./daily-weather.html');
+const controller = require('./daily-weather.controller.js');
 
 const DailyWeatherComponent = {
-  template: dailyHtmlTemplate,
-  controller: dailyController
+  template,
+  controller,
+  bindings: {
+    weather: '<'
+  }
 };
 
 module.exports = DailyWeatherComponent;

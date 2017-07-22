@@ -4,7 +4,10 @@
 
  const HourlyWeatherComponent = {
    template: hourlyHtmlTemplate,
-   controller: hourlyController
+   controller: hourlyController,
+   bindings: {
+     weather: '<'
+   }
  };
 
  module.exports = HourlyWeatherComponent;

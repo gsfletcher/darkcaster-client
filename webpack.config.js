@@ -10,7 +10,7 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
  *
  */
 
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
+// const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 
 /*
  * We've enabled ExtractTextPlugin for you. This allows your app to
@@ -74,7 +74,7 @@ module.exports = {
 		]
 	},
 
-	plugins: [new UglifyJSPlugin(),
+	plugins: [//new UglifyJSPlugin(),
 						new ExtractTextPlugin('style.css'),
 						new HtmlWebpackPlugin({
 							title: 'Darkcaster',
